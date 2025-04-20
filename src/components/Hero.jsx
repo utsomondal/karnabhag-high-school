@@ -26,7 +26,7 @@ const Hero = () => {
               Humanities.
             </p>
             <Link to={'/notices'}>
-              <button className="btn btn-primary btn-sm md:btn-md">
+              <button className="btn btn-outline btn-sm md:btn-md">
                 Notice Board
               </button>
             </Link>

@@ -67,10 +67,10 @@ const Teachers = () => {
     <div className="p-4 sm:p-6 font-bengali">
       <div className="relative text-center mb-10">
         {/* Heading */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800 inline-block border-b-2 border-blue-600 pb-1 relative">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800 inline-block border-b-2 border-blue-600 pb-1">
           আমাদের শিক্ষকমণ্ডলী
           {/* Positioned cap icon to the right and above, closer to title */}
-          <MdSchool className="text-blue-800 text-xl sm:text-2xl md:text-3xl absolute top-[-20px] right-[-10px] sm:right-[-12px] md:right-[-15px] rotate-12" />
+          {/* <MdSchool className="text-blue-800 text-xl sm:text-2xl md:text-3xl absolute top-[-20px] right-[-10px] sm:right-[-12px] md:right-[-15px] rotate-12" /> */}
         </h1>
       </div>
 

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaPhoneAlt,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -13,12 +8,12 @@ const Footer = () => {
         {/* Left section */}
         <div className="text-center md:text-left space-y-3">
           <p className="text-lg font-semibold">
-            Developed with ❤️ by{" "}
+            Developed by{" "}
             <a
               href="https://www.facebook.com/utso.mondal2019/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-gray-300"
+              className="hover:underline hover:text-gray-300"
             >
               Utso Mondal
             </a>
@@ -29,13 +24,13 @@ const Footer = () => {
               href="https://www.wub.edu.bd/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-gray-300"
+              className="hover:underline hover:text-gray-300"
             >
               World University of Bangladesh
             </a>
           </p>
           <p className="text-xs opacity-70">
-            &copy; {new Date().getFullYear()} All rights reserved.
+            &copy; {new Date().getFullYear()} All rights reserved by Utso Mondal & Karnabhag High School.
           </p>
         </div>
 
@@ -69,7 +64,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               title={title}
-              className="bg-white text-blue-800 p-3 rounded-full hover:bg-gray-100 transition"
+              className="bg-white text-blue-800 p-3 rounded-full hover:bg-gray-100 transition hover:scale-105 duration-150"
             >
               {icon}
             </a>

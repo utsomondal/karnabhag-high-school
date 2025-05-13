@@ -8,11 +8,11 @@ const CardChief = () => {
         <h1 className="text-center text-2xl bg-blue-600 p-3 text-white w-full">
           সভাপতি
         </h1>
-        <img className="w-1/2 mx-auto" src={sovapoti} alt="" />
-        <h2 className="text-center">এখনো নির্বাচিত হয়নি</h2>
+        <img className="w-1/2 mx-auto border border-gray-400 rounded-sm" src={sovapoti} alt="sovapoti image" />
+        <h2 className="text-center text-xl mb-0">এখনো নির্বাচিত হয়নি</h2>
         <p className="text-center my-0">
           মোবাইল:{" "}
-          <span>
+          <span className="text-blue-500 underline underline-offset-2">
             <a href="tel:017xxxxxxxx">017xxxxxxxx</a>
           </span>
         </p>

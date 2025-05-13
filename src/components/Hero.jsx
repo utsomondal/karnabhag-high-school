@@ -32,7 +32,8 @@ const Hero = () => {
       -right-5 sm:-right-4 md:-right-7 
       text-4xl sm:text-5xl md:text-6xl 
       rotate-[20deg] 
-      scale-x-[-1]"
+      scale-x-[-1]
+      drop-shadow-lg"
               />
             </div>
             {/* cap styling end */}

@@ -1,9 +1,9 @@
 const BasicInfo = () => {
   return (
-    <div className="rounded-xl shadow-lg p-8 my-8 border border-gray-400 mx-1 font-bengali">
+    <div className="rounded-xl shadow-lg p-8 my-8 border border-gray-400 mx-1">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-3">সাধারণ</h3>
+        <div className="font-noto">
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 font-bengali">সাধারণ</h3>
           <div className="grid grid-cols-2 gap-2">
             <span className="font-medium text-gray-700">প্রতিষ্ঠানের নাম:</span>
             <span className="text-gray-900">কর্ণভাগ উচ্চ বিদ্যালয়</span>
@@ -18,15 +18,15 @@ const BasicInfo = () => {
           </div>
         </div>
 
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-3">
+        <div className="font-noto">
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 font-bengali">
             স্বীকৃতি ও অনুমোদন
           </h3>
           <div className="grid grid-cols-2 gap-2">
             <span className="font-medium text-gray-700">স্বীকৃতি:</span>
             <span className="text-gray-900">স্বীকৃত</span>
             <span className="font-medium text-gray-700">স্বীকৃতি তারিখ:</span>
-            <span className="text-gray-900">০৪ আগস্ট, ১৯৯৬</span>
+            <span className="text-gray-900 ">০৪ আগস্ট, ১৯৯৬</span>
             <span className="font-medium text-gray-700">
               স্বীকৃতির স্তর:
             </span>
@@ -36,8 +36,8 @@ const BasicInfo = () => {
           </div>
         </div>
 
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-3">
+        <div className="font-noto">
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 font-bengali">
             MPO তথ্য
           </h3>
           <div className="grid grid-cols-2 gap-2">
@@ -48,8 +48,8 @@ const BasicInfo = () => {
           </div>
         </div>
 
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-3">
+        <div className="font-noto">
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 font-bengali">
             একাডেমিক ও প্রশাসন
           </h3>
           <div className="grid grid-cols-2 gap-2">
@@ -68,8 +68,8 @@ const BasicInfo = () => {
           </div>
         </div>
 
-        <div className="md:col-span-1">
-          <h3 className="text-lg font-semibold text-gray-800 mb-3">
+        <div className="md:col-span-1 font-bengali">
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 font-bengali">
             অবস্থান তথ্য
           </h3>
           <div className="grid grid-cols-2 gap-2">

@@ -5,7 +5,7 @@ A modern, responsive web application built for **Karnabhag High School**, locate
 
 ## 🚀 Live Demo
 
-- [Live Link](https://www.linkedin.com/in/utsomondal)
+- [Live Link](https://khs-edu.netlify.app/)
 
 ---
 

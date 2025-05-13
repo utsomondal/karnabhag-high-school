@@ -1,94 +1,81 @@
 import React from "react";
-import { HiUser, HiBadgeCheck, HiBookOpen } from "react-icons/hi";
-import { MdSchool } from "react-icons/md";
+import { HiUser } from "react-icons/hi";
+import {
+  MdSchool,
+  MdOutlineMenuBook,
+  MdScience,
+  MdComputer,
+  MdAgriculture,
+} from "react-icons/md";
+import { GiTeacher } from "react-icons/gi";
+import { FaPersonChalkboard } from "react-icons/fa6";
 
-const teachers = [
+const allTeachers = [
+  { name: "গণেশ চন্দ্র মণ্ডল", designation: "প্রধান শিক্ষক" },
+  { name: "মোঃ গোলাম মোস্তফা প্রামাণিক", designation: "সহকারী প্রধান শিক্ষক" },
+  { name: "আসমাউল হুসনা", designation: "কম্পিউটার শিক্ষক" },
+  { name: "মোঃ বেলাল উদ্দিন দেওয়ান", designation: "শারীরিক শিক্ষক" },
   {
-    name: "GANESH CHANDRA MONDAL",
-    designation: "HEAD MASTER",
-    subject: "N/A (NOT APPLICABLE)",
+    name: "বিপ্লব কুমার মণ্ডল",
+    designation: "সহকারী শিক্ষক (গণিত ও সাধারণ বিজ্ঞান)",
   },
+  { name: "রাজেন্দ্রনাথ প্রামাণিক", designation: "সহকারী শিক্ষক (ইংরেজি)" },
+  { name: "মোঃ নজরুল ইসলাম", designation: "কৃষি শিক্ষক" },
+  { name: "মোঃ আব্দুল হামিদ", designation: "সহকারী শিক্ষক (ব্যবসায় শিক্ষা)" },
+  { name: "রিতা রাণী", designation: "হিন্দু ধর্মীয় শিক্ষক" },
+  { name: "মোছাঃ আনজুমান আরা খানম", designation: "সহকারী শিক্ষক (বিজ্ঞান)" },
+  { name: "মোঃ গোলাম রাব্বানী", designation: "সহকারী শিক্ষক (ইংরেজি)" },
   {
-    name: "MD GOLAM MOSTAFA PRAMANIK",
-    designation: "ASSISTANT HEAD MASTER",
-    subject: "N/A (NOT APPLICABLE)",
+    name: "শিপ্রা সরকার",
+    designation: "সহকারী শিক্ষক (গ্রন্থাগার ও তথ্য বিজ্ঞান)",
   },
-  {
-    name: "ASMAL HUSNA",
-    designation: "COMPUTER TEACHER",
-    subject: "N/A (NOT APPLICABLE)",
-  },
-  {
-    name: "MD BELAL HOSSAIN",
-    designation: "PHYSICAL TEACHER",
-    subject: "N/A (NOT APPLICABLE)",
-  },
-  {
-    name: "BIPLAB KUMAR MONDAL",
-    designation: "ASSISTANT TEACHER (MATH & G.SCIENCE)",
-    subject: "N/A (NOT APPLICABLE)",
-  },
-  {
-    name: "REJENDRA NATH PK.",
-    designation: "ASSISTANT TEACHER (ENGLISH)",
-    subject: "N/A (NOT APPLICABLE)",
-  },
-  {
-    name: "MD NAZRUL ISLAM",
-    designation: "AGRICULTURE",
-    subject: "N/A (NOT APPLICABLE)",
-  },
-  {
-    name: "MD ABDUL HAMID",
-    designation: "ASSISTANT TEACHER (BUSINESS STUDY)",
-    subject: "N/A (NOT APPLICABLE)",
-  },
-  {
-    name: "RITA RANI",
-    designation: "HINDU RELIGION TEACHER",
-    subject: "N/A (NOT APPLICABLE)",
-  },
-  {
-    name: "MST. ANJUMAN ARA KHANAM",
-    designation: "ASSISTANT TEACHER (SCIENCE)",
-    subject: "N/A (NOT APPLICABLE)",
-  },
-  {
-    name: "MD. GOLAM RABBANI",
-    designation: "ASSISTANT TEACHER (ENGLISH)",
-    subject: "ENGLISH",
-  },
-  {
-    name: "SHIPRA SARKER",
-    designation: "ASSISTANT TEACHER",
-    subject: "LIBRARY AND INFORMATION SCIENCE",
-  },
-  {
-    name: "MOHAMMAD MAMUNUR RASHID",
-    designation: "MUSLIM R.TEACHER",
-    subject: "ISLAMIC STUDIES",
-  },
-  {
-    name: "MD. ABDUS SAMAD",
-    designation: "ASSISTANT TEACHER",
-    subject: "PHYSICAL SCIENCE",
-  },
-  {
-    name: "RAZIA SULTANA",
-    designation: "ASSISTANT TEACHER",
-    subject: "BANGLA",
-  },
+  { name: "মোহাম্মদ মামুনুর রশিদ", designation: "মুসলিম ধর্মীয় শিক্ষক" },
+  { name: "মোঃ আব্দুস সামাদ", designation: "সহকারী শিক্ষক (ভৌতবিজ্ঞান)" },
+  { name: "রাজিয়া সুলতানা", designation: "সহকারী শিক্ষক (বাংলা)" },
 ];
+
+// অর্ডার ঠিক করার জন্য sort
+const sortedTeachers = [
+  ...allTeachers.filter((t) => t.designation.includes("প্রধান শিক্ষক")),
+  // ...allTeachers.filter(t => t.designation.includes("সহকারী প্রধান শিক্ষক")),
+  ...allTeachers.filter((t) => t.designation.startsWith("সহকারী শিক্ষক")),
+  ...allTeachers.filter(
+    (t) =>
+      !t.designation.includes("প্রধান শিক্ষক") &&
+      !t.designation.includes("সহকারী প্রধান শিক্ষক") &&
+      !t.designation.startsWith("সহকারী শিক্ষক")
+  ),
+];
+
+// আইকন সিলেক্টর
+const getIcon = (designation) => {
+  if (designation.includes("প্রধান শিক্ষক"))
+    return <MdSchool className="text-blue-600 text-lg" />;
+  if (designation.includes("ধর্ম"))
+    return <MdOutlineMenuBook className="text-purple-600 text-lg" />;
+  if (designation.includes("কম্পিউটার"))
+    return <MdComputer className="text-green-600 text-lg" />;
+  if (designation.includes("বিজ্ঞান") || designation.includes("ভৌতবিজ্ঞান"))
+    return <MdScience className="text-yellow-600 text-lg" />;
+  if (designation.includes("কৃষি"))
+    return <MdAgriculture className="text-green-700 text-lg" />;
+  return <FaPersonChalkboard className="text-pink-600 text-lg" />;
+};
 
 const Teachers = () => {
   return (
-    <div className="p-6 min-h-screen">
-      <h1 className="text-3xl font-bold text-center mb-10 text-blue-800 flex items-center justify-center gap-2">
-        <MdSchool className="text-blue-600" /> Meet Our Educators
-      </h1>
+    <div className="p-8 font-bengali">
+      <div className="relative text-center mb-10">
+        {/* Heading */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800 inline-block border-b-2 border-blue-600 pb-1 relative">
+          আমাদের শিক্ষকমণ্ডলী
+          {/* Positioned cap icon to the right and above */}
+          <MdSchool className="text-blue-600 text-xl sm:text-2xl md:text-3xl absolute top-[-25px] right-[-30px] sm:right-[-35px] md:right-[-40px] rotate-12" />
+        </h1>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {teachers.map((teacher, index) => (
+        {sortedTeachers.map((teacher, index) => (
           <div
             key={index}
             className="bg-white rounded-2xl shadow-xl border border-gray-200 p-5 hover:shadow-2xl transition duration-300 ease-in-out"
@@ -99,13 +86,9 @@ const Teachers = () => {
                 {teacher.name}
               </h2>
             </div>
-            <div className="flex items-center gap-2 mb-2">
-              <HiBadgeCheck className="text-green-600 text-lg" />
-              <p className="text-sm text-gray-700">{teacher.designation}</p>
-            </div>
             <div className="flex items-center gap-2">
-              <HiBookOpen className="text-purple-600 text-lg" />
-              <p className="text-sm text-gray-600">{teacher.subject}</p>
+              {getIcon(teacher.designation)}
+              <p className="text-sm text-gray-700">{teacher.designation}</p>
             </div>
           </div>
         ))}

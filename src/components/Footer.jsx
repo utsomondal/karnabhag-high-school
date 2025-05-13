@@ -45,7 +45,7 @@ const Footer = () => {
             <FaEnvelope />
           </a>
           <a
-            href="tel:+8801234567890"
+            href="tel:+8801580761282"
             className="hover:text-gray-300 transition-all duration-200"
             title="Phone"
           >

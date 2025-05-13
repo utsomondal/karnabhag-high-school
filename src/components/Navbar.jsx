@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BiLogIn } from "react-icons/bi";
-import { FaSchool } from "react-icons/fa";
 
 const Navbar = () => {
   const navigationItems = (
@@ -9,41 +8,41 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "font-bold text-blue-500" : ""
+            isActive ? "font-bold text-blue-500 font-bengali" : "font-bengali"
           }
           to={"/"}
         >
-          Home
+          হোম
         </NavLink>
       </li>
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "font-bold text-blue-500" : ""
+            isActive ? "font-bold text-blue-500 font-bengali" : "font-bengali"
           }
           to={"notices"}
         >
-          Notices
+          নোটিশ
         </NavLink>
       </li>
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "font-bold text-blue-500" : ""
+            isActive ? "font-bold text-blue-500 font-bengali" : "font-bengali"
           }
           to={"teachers"}
         >
-          Teachers
+          শিক্ষকমণ্ডলী
         </NavLink>
       </li>
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "font-bold text-blue-500" : ""
+            isActive ? "font-bold text-blue-500 font-bengali" : "font-bengali"
           }
           to={"staffs"}
         >
-          Staffs
+          কর্মচারীবৃন্দ
         </NavLink>
       </li>
     </>
@@ -83,9 +82,9 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-8  00 whitespace-nowrap ml-1"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 whitespace-nowrap ml-2 font-tiro"
           >
-            Karnabhag High School
+            কর্ণভাগ উচ্চ বিদ্যালয়
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -97,9 +96,9 @@ const Navbar = () => {
           {/* Button for larger screens */}
           <Link
             to={"login"}
-            className="hidden lg:flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105 active:scale-95"
+            className="hidden lg:flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105 active:scale-105 font-bengali"
           >
-            <span>Login</span>
+            <span>লগইন</span>
           </Link>
 
           {/* Button with icon for mobile */}

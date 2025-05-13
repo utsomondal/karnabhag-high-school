@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   const handleUpload = async () => {
     if (!title || !pdfFile) {
-      alert("Please enter a title and select a PDF file.");
+      alert("দয়া করে একটি শিরোনাম দিন এবং একটি PDF ফাইল নির্বাচন করুন।");
       return;
     }
 
@@ -21,72 +21,72 @@ const Dashboard = () => {
     try {
       const fileName = `${Date.now()}_${pdfFile.name}`;
 
-      // Upload file to Supabase Storage
+      // Supabase স্টোরেজে ফাইল আপলোড করুন
       const { error: storageError } = await supabase.storage
         .from("notices-pdf")
         .upload(fileName, pdfFile);
 
       if (storageError) {
         console.error(storageError);
-        alert("Error uploading PDF.");
+        alert("PDF আপলোড করতে ত্রুটি ঘটেছে।");
         setLoading(false);
         return;
       }
 
-      // Get public URL of uploaded PDF
+      // আপলোড হওয়া PDF এর পাবলিক URL পান
       const {
         data: { publicUrl },
       } = supabase.storage.from("notices-pdf").getPublicUrl(fileName);
 
-      // Insert record into 'notices' table
+      // 'notices' টেবিলে রেকর্ড ইনসার্ট করুন
       const { error: insertError } = await supabase.from("notices").insert([
         {
           title,
           pdf_url: publicUrl,
-          // upload_date defaults to now() automatically
+          // upload_date এখন() স্বয়ংক্রিয়ভাবে ডিফল্ট হিসেবে দেয়া হবে
         },
       ]);
 
       if (insertError) {
         console.error(insertError);
-        alert("Failed to save notice.");
+        alert("নোটিশ সংরক্ষণ করতে ব্যর্থ হয়েছে।");
       } else {
-        alert("Notice uploaded successfully!");
+        alert("নোটিশ সফলভাবে আপলোড হয়েছে!");
         setTitle("");
         setPdfFile(null);
       }
     } catch (err) {
       console.error(err);
-      alert("Unexpected error occurred.");
+      alert("অপ্রত্যাশিত ত্রুটি ঘটেছে।");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-[calc(100vh-272px)] p-6 flex items-center justify-center">
+    <div className="min-h-[calc(100vh-272px)] p-6 flex items-center justify-center font-bengali">
       <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-xl">
         <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">
-          Admin Dashboard
+          অ্যাডমিন ড্যাশবোর্ড
         </h2>
 
         <div className="space-y-4">
           <div>
             <label className="block text-lg font-medium text-gray-700">
-              Notice Title
+              নোটিশ শিরোনাম
             </label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
-              placeholder="Enter notice title"
+              placeholder="নোটিশের শিরোনাম লিখুন"
             />
           </div>
 
           <div>
             <label className="block text-lg font-medium text-gray-700">
-              Upload PDF Notice
+              PDF নোটিশ আপলোড করুন
             </label>
             <input
               type="file"
@@ -103,7 +103,7 @@ const Dashboard = () => {
 
           {pdfFile && (
             <div className="mt-2 text-green-700 font-medium">
-              Selected File: {pdfFile.name}
+              নির্বাচিত ফাইল: {pdfFile.name}
             </div>
           )}
 
@@ -112,7 +112,7 @@ const Dashboard = () => {
             disabled={loading}
             className="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-all duration-300"
           >
-            {loading ? "Uploading..." : "Upload PDF"}
+            {loading ? "আপলোড হচ্ছে..." : "PDF আপলোড করুন"}
           </button>
         </div>
       </div>

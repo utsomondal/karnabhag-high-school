@@ -13,40 +13,39 @@ const Login = () => {
     e.preventDefault();
 
     if (username === ADMIN_USERNAME && pin === ADMIN_PIN) {
-      // redirect to dashboard
+      // ড্যাশবোর্ডে রিডিরেক্ট করুন
       navigate("/dashboard");
     } else {
-      alert("Invalid username or pin!");
+      alert("অবৈধ ব্যবহারকারী নাম বা পিন! দয়া করে সঠিক তথ্য প্রদান করুন।");
     }
   };
 
   return (
-    <div className="min-h-[calc(100vh-313px)] flex items-center justify-center px-4 mt-10">
+    <div className="min-h-[calc(100vh-312px)] flex items-center justify-center px-4 mt-10 font-bengali">
       <div className="flex flex-col lg:flex-row bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-5xl">
-        {/* Left Side Text */}
+        {/* বাম পাশে স্বাগতম বার্তা */}
         <div className="w-full lg:w-1/2 p-8 flex flex-col justify-center bg-gradient-to-br from-indigo-600 to-blue-600 text-white">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Welcome Back 👋
+            স্বাগতম 👋
           </h2>
           <p className="text-lg opacity-90">
-            Login to access the admin dashboard and manage notices and updates
-            for <span className="font-bold">Karnabhag High School</span>
+            অ্যাডমিন ড্যাশবোর্ডে প্রবেশ করতে এবং <span className="font-bold">কর্ণভাগ উচ্চ বিদ্যালয়</span> এর নোটিশ ও আপডেট পরিচালনা করতে লগইন করুন।
           </p>
         </div>
 
-        {/* Login Form */}
+        {/* লগইন ফর্ম */}
         <div className="w-full lg:w-1/2 p-8 md:p-12">
           <h3 className="text-3xl font-bold text-center mb-6 text-gray-800">
-            Admin Login
+            অ্যাডমিন লগইন
           </h3>
           <form className="space-y-4" onSubmit={handleLogin}>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Admin Username
+                অ্যাডমিন ইউজারনেম
               </label>
               <input
                 type="text"
-                placeholder="username"
+                placeholder="ব্যবহারকারী নাম"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -54,7 +53,7 @@ const Login = () => {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Admin Pin
+                অ্যাডমিন পিন
               </label>
               <input
                 type="password"
@@ -68,7 +67,7 @@ const Login = () => {
               type="submit"
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl"
             >
-              Login
+              লগইন করুন
             </button>
           </form>
         </div>

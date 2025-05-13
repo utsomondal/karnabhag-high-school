@@ -1,9 +1,10 @@
 import React from 'react';
+import Staffs from '../components/Staffs';
 
 const StaffsPage = () => {
   return (
     <div>
-      <h1>staff page</h1>
+      <Staffs />
     </div>
   );
 };

@@ -8,6 +8,8 @@ import TeachersPage from './Pages/TeachersPage.jsx';
 import NoticePage from './Pages/NoticePage.jsx';
 import StaffsPage from './Pages/StaffsPage.jsx';
 import Login from './components/Login.jsx';
+import Dashboard from './Pages/Dashboard.jsx';
+import Committee from './Pages/Committee.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard />,
+      },
+      {
+        path: '/committee',
+        element: <Committee />,
       },
     ],
   },

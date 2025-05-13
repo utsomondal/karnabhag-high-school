@@ -1,9 +1,10 @@
 import React from 'react';
+import Teachers from '../components/Teacher';
 
 const TeachersPage = () => {
   return (
     <div>
-      <h1>teacher page</h1>
+      <Teachers />
     </div>
   );
 };

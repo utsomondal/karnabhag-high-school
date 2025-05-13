@@ -1,29 +1,63 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import { BiLogIn } from "react-icons/bi";
+import { FaSchool } from "react-icons/fa";
 
 const Navbar = () => {
   const navigationItems = (
     <>
       <li>
-        <NavLink to={'/'}>Home</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "font-bold text-blue-500" : ""
+          }
+          to={"/"}
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to={'notices'}>Notices</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "font-bold text-blue-500" : ""
+          }
+          to={"notices"}
+        >
+          Notices
+        </NavLink>
       </li>
       <li>
-        <NavLink to={'teachers'}>Teachers</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "font-bold text-blue-500" : ""
+          }
+          to={"teachers"}
+        >
+          Teachers
+        </NavLink>
       </li>
       <li>
-        <NavLink to={'staffs'}>Staffs</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "font-bold text-blue-500" : ""
+          }
+          to={"staffs"}
+        >
+          Staffs
+        </NavLink>
       </li>
     </>
   );
   return (
     <nav>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-100 shadow-lg">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden p-0 "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -31,13 +65,13 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                {' '}
+                {" "}
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
-                />{' '}
+                />{" "}
               </svg>
             </div>
             <ul
@@ -47,13 +81,34 @@ const Navbar = () => {
               {navigationItems}
             </ul>
           </div>
-          <a className="text-2xl font-bold">Karnabhag High School</a>
+          <Link
+            to="/"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-8  00 whitespace-nowrap ml-1"
+          >
+            Karnabhag High School
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navigationItems}</ul>
+          <ul className="menu menu-horizontal px-1 text-[16px]">
+            {navigationItems}
+          </ul>
         </div>
         <div className="navbar-end">
-          <Link to={'login'} className="btn">Login</Link>
+          {/* Button for larger screens */}
+          <Link
+            to={"login"}
+            className="hidden lg:flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105 active:scale-95"
+          >
+            <span>Login</span>
+          </Link>
+
+          {/* Button with icon for mobile */}
+          <Link
+            to={"login"}
+            className="lg:hidden text-3xl text-blue-600 hover:text-blue-700 transition-all duration-200 ease-in-out"
+          >
+            <BiLogIn />
+          </Link>
         </div>
       </div>
     </nav>

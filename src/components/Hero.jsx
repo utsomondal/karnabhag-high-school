@@ -1,35 +1,52 @@
-import React from 'react';
-import heroImage from '../assets/hero.jpg';
-import { Link } from 'react-router-dom';
+import React from "react";
+import heroImage from "../assets/hero.jpg";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
 
 const Hero = () => {
   return (
-    <div className="mt-6 md:mt-10 rounded-lg px-1">
+    <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-12 px-1">
       <div
-        className="hero min-h-[60vh] md:min-h-[80vh] rounded-lg"
+        className="hero relative min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] xl:min-h-[80vh] rounded-xl overflow-hidden"
         style={{
           backgroundImage: `url(${heroImage})`,
-          borderRadius: '8px',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <div className="hero-overlay rounded-lg bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-md md:max-w-2xl">
-            <h1 className="mb-3 md:mb-5 text-3xl md:text-5xl font-bold">
+        <div className="hero-overlay absolute inset-0 bg-opacity-50 rounded-xl"></div>
+        <div className="hero-content relative z-10 text-white text-center flex items-center justify-center h-full px-4">
+          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl xl:max-w-3xl">
+            <h1 className="mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight">
               Karnabhag High School
             </h1>
-            <p className="mb-3 md:mb-5 text-sm md:text-lg">
-              A leading secondary school in Karnabhag, Naogaon, dedicated to
-              providing quality education and fostering student success within
-              the Rajshahi Education Board. Established in 1971, we offer a
-              comprehensive curriculum in Business Studies, Science, and
-              Humanities.
+            <p className="mb-4 sm:mb-5 md:mb-6 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base text-white/80">
+              <span className="block sm:hidden">
+                A leading secondary school in Karnabhag, Naogaon, dedicated to
+                providing quality education...
+              </span>
+              <span className="hidden sm:block">
+                A leading secondary school in Karnabhag, Naogaon, dedicated to
+                providing quality education and fostering student success within
+                the Rajshahi Education Board. Established in 1971, we offer a
+                comprehensive curriculum in Business Studies, Science, and
+                Humanities.
+              </span>
             </p>
-            <Link to={'/notices'}>
-              <button className="btn btn-outline btn-sm md:btn-md">
-                Notice Board
-              </button>
-            </Link>
+            <div className="flex justify-center items-center gap-3">
+              <Link to="/notices">
+                <button className="btn bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center border border-blue-500 transition-all duration-300 ease-in-out">
+                  Notice Board
+                  <FaArrowRight className="ml-1 sm:ml-2" />
+                </button>
+              </Link>
+              <Link to="/committee">
+                <button className="btn btn-outline hover:bg-blue-700 text-white font-semibold text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center border-2 hover:border border-blue-500 transition-all duration-300 ease-in-out">
+                  School Committee
+
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

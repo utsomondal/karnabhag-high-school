@@ -11,6 +11,7 @@ A modern, responsive web application built for **Karnabhag High School**, locate
 
 ## 📌 Features
 
+- 🗣️ **Language** – This website is built entirely in **Bangla (Bengali)** for native accessibility.
 - 🏠 **Homepage** – Introduction and overview of the school
 - 📢 **Notice Page** – Public notices for students and guardians
 - 👨‍🏫 **Teachers Page** – List of teaching staff with details

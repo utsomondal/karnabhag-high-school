@@ -4,37 +4,39 @@ import { MdWork } from "react-icons/md";
 
 const staffs = [
   {
-    name: "MD AZAHAR ALI PK",
-    designation: "3RD CLASS EMPLOYEE",
+    name: "মোঃ আজহার আলী প্রামাণিক",
+    designation: "তৃতীয় শ্রেণির কর্মচারী",
   },
   {
-    name: "NAIMUDDIN PK",
-    designation: "4TH CLASS EMPLOYEE",
+    name: "নইমুদ্দিন প্রামাণিক",
+    designation: "চতুর্থ শ্রেণির কর্মচারী",
   },
   {
-    name: "MD. ABDUL MALEK",
-    designation: "4TH CLASS EMPLOYEE",
+    name: "মোঃ আব্দুল মালেক",
+    designation: "চতুর্থ শ্রেণির কর্মচারী",
   },
   {
-    name: "MUKTI RANI",
-    designation: "AYAH",
+    name: "মুক্তি রাণী",
+    designation: "আয়া",
   },
   {
-    name: "MD. ASADUL ISLAM",
-    designation: "SECURITY GUARD",
+    name: "মোঃ আসাদুল ইসলাম",
+    designation: "নিরাপত্তা প্রহরী",
   },
   {
-    name: "MD. NAIM HOSSAIN",
-    designation: "OFFICE ASSISTANT (MLSS)",
+    name: "মোঃ নাঈম হোসেন",
+    designation: "অফিস সহকারী (এমএলএসএস)",
   },
 ];
 
 const Staffs = () => {
   return (
-    <div className="p-6 min-h-[calc(100vh-232px)]">
-      <h1 className="text-3xl font-bold text-center mb-10 text-blue-800 flex items-center justify-center gap-2">
-        <MdWork className="text-blue-600" /> Meet Our Support Staff
-      </h1>
+    <div className="p-6 font-bengali">
+      <div className="mb-10 flex items-center justify-center">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800 border-b-2 border-blue-600 pb-1">
+          আমাদের সহায়ক কর্মীবৃন্দ
+        </h1>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {staffs.map((staff, index) => (

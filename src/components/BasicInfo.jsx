@@ -1,6 +1,6 @@
 const BasicInfo = () => {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-8 my-8 border border-gray-400 mx-1 font-bengali">
+    <div className="rounded-xl shadow-lg p-8 my-8 border border-gray-400 mx-1 font-bengali">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">
         <div>
           <h3 className="text-lg font-semibold text-gray-800 mb-3">সাধারণ</h3>
@@ -57,7 +57,7 @@ const BasicInfo = () => {
             <span className="text-gray-900">মাধ্যমিক</span>
             <span className="font-medium text-gray-700">বিষয়বস্তু:</span>
             <span className="text-gray-900">
-              ব্যবসায় শিক্ষা, বিজ্ঞান, মানবিক বিদ্যা
+              ব্যবসায় শিক্ষা, বিজ্ঞান, মানবিক
             </span>
             <span className="font-medium text-gray-700">যৌথ শিক্ষা:</span>
             <span className="text-gray-900">মিশ্রিত</span>

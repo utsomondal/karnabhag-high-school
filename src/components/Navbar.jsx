@@ -42,14 +42,14 @@ const Navbar = () => {
           }
           to={"staffs"}
         >
-          কর্মচারীবৃন্দ
+          কর্মচারী
         </NavLink>
       </li>
     </>
   );
   return (
-    <nav>
-      <div className="navbar bg-base-100 shadow-lg">
+    <nav className="bg-[#E8E8E8] sticky top-0 z-50">
+      <div className="navbar shadow-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -82,7 +82,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 whitespace-nowrap ml-2 font-tiro"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-800 whitespace-nowrap ml-2 font-tiro"
           >
             কর্ণভাগ উচ্চ বিদ্যালয়
           </Link>

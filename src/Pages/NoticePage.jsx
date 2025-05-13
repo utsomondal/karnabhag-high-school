@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabase/supabase";
 import { FaFilePdf } from "react-icons/fa";
-import { GrAnnounce } from "react-icons/gr";
 
 // Convert English digits to Bengali
 const convertToBengaliNumerals = (input) => {
@@ -73,12 +72,11 @@ const NoticePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen py-10 px-4 sm:px-10 font-noto">
+    <div className="min-h-screen py-10 px-2 sm:px-10 font-noto">
       <div className="flex items-center justify-center mb-10">
-        <h1 className="text-4xl font-bold text-center text-blue-800 font-bengali">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800 inline-block border-b-2 border-blue-600 pb-1">
           নোটিশ বোর্ড
         </h1>
-        <GrAnnounce className="text-blue-600 text-4xl ml-2" />
       </div>
 
       {loading ? (
@@ -91,7 +89,7 @@ const NoticePage = () => {
         <>
           {/* Table layout for sm and up */}
           <div className="hidden sm:block overflow-x-auto rounded-lg shadow-sm">
-            <table className="w-full min-w-[600px] text-left">
+            <table className="w-full min-w-[600px] bg-[#F5F5F5] text-left">
               <thead>
                 <tr className="bg-blue-600 text-white">
                   <th className="py-3 px-4 text-center">ক্রমিক</th>

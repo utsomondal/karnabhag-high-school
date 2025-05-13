@@ -4,13 +4,13 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <main>
+    <div className="flex flex-col min-h-screen bg-[#DDDDDD] scroll-smooth">
       <Navbar />
-      <div className='container mx-auto'>
+      <main className="flex-1 container mx-auto w-full">
         <Outlet />
-      </div>
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 }
 

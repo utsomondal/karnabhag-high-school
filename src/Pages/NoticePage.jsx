@@ -137,11 +137,11 @@ const NoticePage = () => {
           </div>
 
           {/* Card layout for small screens */}
-          <div className="block sm:hidden space-y-4">
+          <div className="block sm:hidden space-y-5">
             {notices.map((notice, index) => (
               <div
                 key={notice.id}
-                className="border border-gray-200 rounded-lg shadow-sm p-4"
+                className="border-b border-gray-200 rounded-lg shadow-sm p-4 bg-[#F5F5F5]"
               >
                 <p className="text-sm text-gray-500 mb-2">
                   ক্রমিক: {convertToBengaliNumerals(index + 1)}

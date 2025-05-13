@@ -31,7 +31,7 @@ const staffs = [
 
 const Staffs = () => {
   return (
-    <div className="p-6 font-bengali">
+    <div className="p-4 sm:p-6 font-bengali">
       <div className="mb-10 flex items-center justify-center">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800 border-b-2 border-blue-600 pb-1">
           আমাদের সহায়ক কর্মীবৃন্দ

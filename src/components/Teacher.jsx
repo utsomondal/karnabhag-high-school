@@ -64,7 +64,7 @@ const getIcon = (designation) => {
 
 const Teachers = () => {
   return (
-    <div className="p-8 font-bengali">
+    <div className="p-4 sm:p-6 font-bengali">
       <div className="relative text-center mb-10">
         {/* Heading */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800 inline-block border-b-2 border-blue-600 pb-1 relative">
